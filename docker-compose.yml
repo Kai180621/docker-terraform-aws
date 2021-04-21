@@ -1,0 +1,12 @@
+version: "3"
+services:
+  terraform:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./terraform:/infra/terraform
+    working_dir: /infra/terraform
+    environment: 
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-hogehoge}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-hogehoge}
