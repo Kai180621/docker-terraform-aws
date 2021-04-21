@@ -27,25 +27,25 @@ ps:
 	docker-compose ps
 
 stg-init:
-	@docker-compose run --rm -w "/infra/terraform/env/stg" terraform terraform init
+	@docker-compose run --rm stg terraform init
 
 stg-plan:
-	@docker-compose run --rm -w "/infra/terraform/env/stg" terraform terraform plan
+	@docker-compose run --rm stg terraform plan
 
 stg-apply:
-	@docker-compose run --rm -w "/infra/terraform/env/stg" terraform terraform apply
+	@docker-compose run --rm stg terraform apply
 
 stg-destroy:
-	@docker-compose run --rm -w "/infra/terraform/env/stg" terraform terraform destroy
+	@docker-compose run --rm stg terraform destroy
 
 prod-init:
-	@docker-compose run --rm -w "/infra/terraform/env/prod" terraform terraform init
+	@docker-compose run --rm prod terraform init
 
 prod-plan:
-	@docker-compose run --rm -w "/infra/terraform/env/prod" terraform terraform plan
+	@docker-compose run --rm prod terraform plan
 
 prod-apply:
-	@docker-compose run --rm -w "/infra/terraform/env/prod" terraform terraform apply
+	@docker-compose run --rm prod terraform apply
 
 prod-destroy:
-	@docker-compose run --rm -w "/infra/terraform/env/prod" terraform terraform destroy
+	@docker-compose run --rm prod terraform destroy
