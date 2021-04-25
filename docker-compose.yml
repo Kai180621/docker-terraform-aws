@@ -7,12 +7,14 @@ x-dev-base: &dev-base
   environment: 
     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:-hogehoge}
     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:-hogehoge}
+  volumes: 
+    - ./terraform:/infra/terraform
 
 services:
   stg:
     << : *dev-base
-    working_dir: /infra/env/stg
+    working_dir: /infra/terraform/env/stg
   
   prod:
     << : *dev-base
-    working_dir: /infra/env/prod
+    working_dir: /infra/terraform/env/prod
