@@ -13,7 +13,7 @@ ENV PS1="awscliv2> "
 
 # install terraform.
 # https://azukipochette.hatenablog.com/entry/2018/06/24/004354
-RUN curl "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip" -o "terraform.zip" && \
+RUN curl "https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip" -o "terraform.zip" && \
     unzip ./terraform.zip -d /usr/local/bin/
 
 # create workspace.
